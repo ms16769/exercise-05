@@ -21,8 +21,10 @@ def read_csv(filename):
     with open(filename) as csvfile:
         ### EDIT BELOW HERE ###
 		#pass
-        result = csv.reader(csvfile, delimiter=";")
-		
+        reader = csv.reader(csvfile, delimiter=";")
+		for row in reader
+		print(row)
+		result.append(row)
 		#pass
         ### EDIT ABOVE HERE ###
 	#result = list(reader)
@@ -40,7 +42,12 @@ def csv_to_html(csvdata):
     """
     htmlstring = ""
     ### EDIT BELOW HERE ###
-    htmlstring = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n"
+    htmlline = "<tr><td>%s</td><td>%s</td><td>%s</td></tr>\n"
+	for line in csvdata
+	#print (line)
+	print(htmlline.format(line[0],line[1],line[2]))
+	htmlstring += htmlline.format(line[0],line[1],line[2]))
+	
    # pass
     ### EDIT ABOVE HERE ###
 
@@ -53,7 +60,9 @@ def combine_template_with_data(template_string, htmldata):
         tabular data.
     """
     ### EDIT BELOW HERE ###
-    return ""
+	# print(template_string)
+	# print(htmldata)
+    return template_string.format(htmldata)
     ### EDIT ABOVE HERE ###
 
 
